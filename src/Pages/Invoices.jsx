@@ -14,11 +14,18 @@ export default function Invoices() {
             {invoices.map((invoice) => (
 
                 <div style={{ backgroundColor: 'lightgray', borderRadius: 15, marginInline: 20, paddingInline: 10, paddingBlock: 10 }}>
+                    <h5>{t(Object.keys(invoice)[4])}</h5>
+
+                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                        <label style={{ fontWeight: 'bold' }}>Nombre:</label>
+                        <p style={{ marginLeft: 10 }}>{invoice.name}</p>
+                    </div>
 
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                         <label style={{ fontWeight: 'bold' }}>{t('Job')}:</label>
-                        <p style={{ marginLeft: 10 }}>{invoice.name}</p>
+                        <p style={{ marginLeft: 10 }}>{invoice.job}</p>
                     </div>
+
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                         <label style={{ fontWeight: 'bold' }}>{t('Amount')}:</label>
                         <p style={{ marginLeft: 10 }}>{invoice.amount}</p>
